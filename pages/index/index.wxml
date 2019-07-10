@@ -1,0 +1,77 @@
+<!--index.wxml-->
+<view class="main">
+
+  <view class='search-view'>
+    <van-search
+      value="{{ search }}"
+      placeholder="请输入搜索关键词"
+      bind:search="onSearch"
+    />
+  </view>
+
+  <view class='home-swiper'>
+    <swiper indicator-dots="true" autoplay="true" interval="3000" duration="500" >
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class='home-tool'>
+    <van-row>
+      <van-col span="6" class="home-tool-col">
+        <image class='home-tool-img' mode="scaleToFill" src="../../resources/img/cat.jpg"></image>
+        <view class='home-tool-text'>墙面漆</view>
+      </van-col>
+      <van-col span="6" class="home-tool-col">
+        <image class='home-tool-img' mode="scaleToFill" src="../../resources/img/pic.jpg"></image>
+        <view class='home-tool-text'>木器漆</view>
+      </van-col>
+      <van-col span="6" class="home-tool-col">
+        <image class='home-tool-img' mode="scaleToFill" src="../../resources/img/cat.jpg"></image>
+        <view class='home-tool-text'>多乐士</view>
+      </van-col>
+      <van-col span="6" class="home-tool-col">
+        <image class='home-tool-img' mode="scaleToFill" src="../../resources/img/pic.jpg"></image>
+        <view class='home-tool-text'>艺术漆</view>
+      </van-col>
+    </van-row>
+    <van-row>
+      <van-col span="6" class="home-tool-col">
+        <image class='home-tool-img' mode="scaleToFill" src="../../resources/img/cat.jpg"></image>
+        <view class='home-tool-text'>防水</view>
+      </van-col>
+      <van-col span="6" class="home-tool-col">
+        <image class='home-tool-img' mode="scaleToFill" src="../../resources/img/pic.jpg"></image>
+        <view class='home-tool-text'>墙布</view>
+      </van-col>
+      <van-col span="6" class="home-tool-col">
+        <image class='home-tool-img' mode="scaleToFill" src="../../resources/img/cat.jpg"></image>
+        <view class='home-tool-text'>辅料</view>
+      </van-col>
+      <van-col span="6" class="home-tool-col">
+        <image class='home-tool-img' mode="scaleToFill" src="../../resources/img/pic.jpg"></image>
+        <view class='home-tool-text'>优惠券</view>
+      </van-col>
+    </van-row>
+  </view>
+
+
+
+
+
+  <van-tabbar
+    active="{{ active }}"
+    active-color="#07c160"
+    inactive-color="#000"
+    bind:change="onChange"
+  >
+    <van-tabbar-item icon="wap-home" name="home">首页</van-tabbar-item>
+    <van-tabbar-item icon="orders-o" name="type">分类</van-tabbar-item>
+    <van-tabbar-item icon="shopping-cart-o" name="cart">购物车</van-tabbar-item>
+    <van-tabbar-item icon="contact" name="my">我的</van-tabbar-item>
+  </van-tabbar>
+
+</view>
